@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<!--映射文件需要一个dtd来指定格式  -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package = "com.hsp.domain">
+<!--该文件用于配置类和domian对象映射关系 -->
+<class name="com.hsp.domain.Employee" table ="employee">
+<!--id元素用于指定主键属性  -->
+<id name="id" column="id" type="java.lang.Integer">
+<!-- 该元素用于指定主键生成策略 hilo native increment sequence -->
+<generator class="increment" />
+</id>
+
+<!-- 对其他属性配置 -->
+<property name="name" type = "java.lang.String">
+<column name="name" not-null="false" />
+</property>
+<property name="email" type="java.lang.String">
+<column name="email" not-null="false" />
+</property>
+<property name="hiredate" type="java.util.Date">
+<column name="hiredate" not-null="false"/>
+</property>
+</class>
+</hibernate-mapping>
